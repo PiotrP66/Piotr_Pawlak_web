@@ -6,7 +6,6 @@ from sqlalchemy import Integer, String, Text, LargeBinary
 import smtplib
 import os
 from dotenv import find_dotenv, load_dotenv
-import gunicorn
 
 
 # Find and load environment variables
@@ -24,7 +23,8 @@ class Base(DeclarativeBase):
     pass
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DB_URI')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
+    'DB_URI', 'sqlite:///diagrams.db')
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
