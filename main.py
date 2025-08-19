@@ -1,26 +1,13 @@
-# from email import message
 from flask import Flask, render_template, redirect, url_for, request, jsonify
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, Text, LargeBinary
-# from flask_wtf import FlaskForm
-# from wtforms import StringField, SubmitField
 import smtplib
 import os
 from dotenv import find_dotenv, load_dotenv
-import glob
-from datetime import date
+import gunicorn
 
-"""
-path = 'static/figures'
-diagram_dict = {}
-
-for item in glob.glob(os.path.join(path, '*.html')):
-    file_name = item[15:].replace('.html', '')
-    with open(item, 'r', encoding='utf-8') as file:
-        diagram_dict[file_name] = file.read()
-"""
 
 # Find and load environment variables
 dotenv_patch = find_dotenv()
@@ -53,24 +40,6 @@ class Diagrams(db.Model):
 
 with app.app_context():
     db.create_all()
-"""
-path = 'static/figures'
-now = date.today()
-
-for item in glob.glob(os.path.join(path, '*.html')):
-    file_name = item[15:].replace('.html', '')
-    print('file_name: ', file_name)
-    with open(item, 'r', encoding='utf-8') as file:
-        file = file.read()
-    with app.app_context():
-        diagram = Diagrams(
-            title=file_name,
-            diagram=file,
-            edit_date=f"{now.strftime("%d")} {now.strftime("%B")} {now.strftime("%Y")}",
-        )
-        db.session.add(diagram)
-        db.session.commit()
-"""
 
 with app.app_context():
     diagram = db.session.execute(
