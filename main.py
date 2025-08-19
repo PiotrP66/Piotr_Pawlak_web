@@ -13,7 +13,7 @@ dotenv_patch = find_dotenv()
 load_dotenv(dotenv_patch)
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'sqlite:///diagrams.db')
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 Bootstrap5(app)
 
 # CREATE DATABASE
@@ -23,7 +23,8 @@ class Base(DeclarativeBase):
     pass
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DB_URI')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
+    'DB_URI', 'sqlite:///diagrams.db')
 db = SQLAlchemy(model_class=Base)
 db.init_app(app)
 
