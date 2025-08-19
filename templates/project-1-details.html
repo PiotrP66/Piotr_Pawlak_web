@@ -1,0 +1,201 @@
+{% include "header.html" %}
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/">Strona startowa</a></li>
+            <li class="current">Analiza ogłoszeń nieruchomości</li>
+          </ol>
+        </nav>
+        <h1>Szczególy projektu</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-between gy-4 mt-4">
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-description">
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4">
+                  <div class="col-lg-6" data-aos="fade-up">
+                    <div class="portfolio-description">
+                      <h2>Analiza Rynku Nieruchomości w Warszawie – Mieszkania na Sprzedaż</h2>
+                      <p>
+                        Przedstawiona analiza skupia się na rynku mieszkań wystawionych na sprzedaż w Warszawie, z podziałem na rynek pierwotny oraz rynek wtórny. Celem analizy jest ukazanie zróżnicowania cenowego nieruchomości w poszczególnych dzielnicach stolicy, zarówno pod kątem średniej ceny całego mieszkania, jak i ceny za metr kwadratowy. Prezentowane wykresy mają pomóc potencjalnym nabywcom oraz inwestorom w lepszym zrozumieniu specyfiki rynku warszawskiego.
+                      </p>
+                      <img src="static/assets/img/portfolio/city.jpeg" class="img-fluid" alt="city">
+                    </div>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up">
+                    <div class="portfolio-description">
+                      <h2>Podział ogłoszeń na rynki</h2>
+                      {{ fig['pie'] | safe }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h2>Ilość ogłoszeń w zależności od ceny za m<sup>2</sup><br>- rynek pierwotny i wtórny</h2>
+                <p>
+                  Na wykresie przedstawiono liczbę ogłoszeń sprzedaży nieruchomości w Warszawie (zarówno z rynku pierwotnego, jak i wtórnego) w zależności od ceny za metr kwadratowy. Najwięcej ofert mieści się w przedziale od około <b>14 000</b> do <b>20 000 zł/m²</b>. Średnia cena wynosi <b>18 495,41 zł/m²</b> przy odchyleniu standardowym <b>5 876,03 zł</b>, co wskazuje na dość duże zróżnicowanie cen. Pierwszy kwartyl (25% najtańszych ofert) to <b>14 782,61 zł/m²</b>, mediana (50%) wynosi <b>17 257,56 zł/m²</b>, a trzeci kwartyl (75%) sięga <b>20 549,07 zł/m²</b>. Najniższa zanotowana cena to <b>4 344,53 zł/m²</b>, natomiast najwyższa przekracza <b>97 000 zł/m²</b>.
+                </p>
+                {{ fig['hist_liczba_cena_m2'] | safe }}
+              </div>
+
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h2>Ilość ogłoszeń w zależności od metrażu<br>- rynek pierwotny i wtórny</h2>
+                <p>
+                  Na wykresie przedstawiono liczbę ogłoszeń sprzedaży nieruchomości w Warszawie z podziałem na metraż. Największą grupę ofert stanowią mieszkania o powierzchni w przedziale około <b>40–60 m²</b>, co dobrze widać w okolicach mediany (<b>53 m²</b>). Średni metraż wynosi <b>59,92 m²</b> przy odchyleniu standardowym <b>31,37 m²</b>, co wskazuje na dość duże zróżnicowanie ofert. Najmniejsza zarejestrowana powierzchnia to <b>14,53 m²</b>, a największa aż <b>800 m²</b>. Pierwszy kwartyl (25% najmniejszych mieszkań) osiąga <b>41 m²</b>, natomiast 75% ofert nie przekracza <b>68 m²</b>. Dane te pokazują, że najpopularniejsze są lokale o średnim metrażu, jednak na rynku dostępne są również znacznie większe nieruchomości.
+                </p>
+                {{ fig['hist_liczba_metraz'] | safe }} 
+              </div>
+
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h2>Średnia cena za m<sup>2</sup> według dzielnicy<br>- rynek pierwotny</h2>
+                <p>
+                  Na podstawie poniższych wykresów widać, że wśród warszawskich dzielnic na rynku pierwotnym najwyższe ceny za metr kwadratowy osiąga Śródmieście (ponad <b>27 000 zł/m²</b>), a niewiele niższe notują Wola i Ochota (około <b>25 000 zł/m²</b>). Z kolei najniższe stawki odnotowuje się w dzielnicach położonych bardziej na obrzeżach, takich jak Wesoła, Rembertów czy Ząbki.
+                </p>
+                {{ fig['bar_pierwotny_cena_m2_dzielnica'] | safe }} 
+              </div>
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h2>Średnia cena za mieszkanie według dzielnicy<br>- rynek pierwotny</h2>
+                <p>
+                  Podobna tendencja widoczna jest w przypadku całkowitych cen mieszkań: Śródmieście wyróżnia się najwyższą średnią wartością nieruchomości, przekraczającą <b>2 000 000 zł</b>, podczas gdy w dzielnicach o niższych cenach, jak Białołęka czy Wesoła, przeciętne oferty często nie przekraczają <b>800 000 zł</b>
+                </p>
+                {{ fig['bar_pierwotny_cena_dzielnica'] | safe }}
+              </div>
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h2>Średnia cena za m<sup>2</sup> według dzielnicy<br>- rynek wtórny</h2>
+                <p>
+                  Na rynku wtórnym ceny za metr kwadratowy są wyraźnie niższe niż w przypadku rynku pierwotnego, przy czym kolejność dzielnic na wykresie jest bardzo podobna. Najwyższe ceny osiąga Śródmieście (ponad <b>27 000 zł/m²</b>), a za nim na podium plasuje się Wola (<b>21 740 zł/m²</b>) i Żoliborz (około <b>20 830 zł/m²</b>). Z kolei najniższe stawki odnotowuje się w dzielnicach położonych bardziej na obrzeżach Warszawy, takich jak Rembertów, Wesoła czy Ząbki.
+                </p>                  
+                {{ fig['bar_wtorny_cena_m2_dzielnica'] | safe }}
+              </div>
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h2>Średnia cena za mieszkanie według dzielnicy<br>- rynek wtórny</h2>
+                <p>
+                  Analizując wykres całkowitych cen oferowanych mieszkań można stwierdzić, że z wykluczeniem najdroższych dzielnic (Śródmieście, Wilanów, Mokotów i Żoliborz), średnia wartość nieruchomości dla pozostałych rejonów miasta jest bardziej wyrównana niż w przypadku rynku pierwotnego i mieści się w zakresie od ok. <b>800 000 zł</b> do <b>1 200 000 zł</b>.
+                </p>
+                {{ fig['bar_wtorny_cena_dzielnica'] | safe }}          
+              </div>
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h2>Rozkład cen według dzielnicy<br>- rynek pierwotny i wtórny</h2>
+                <p>
+                  Na poniższym wykresie (tzw. wykresie pudełkowym/box-plot) przedstawiono rozkład cen za metr kwadratowy w poszczególnych dzielnicach zarówno na rynku pierwotnym, jak i wtórnym. Ten typ wizualizacji pozwala w szybki sposób odczytać kluczowe informacje o danych, takie jak mediana (środkowa linia w pudełku), kwartyle (górna i dolna krawędź pudełka), a także wartości minimalne i maksymalne (końce „wąsów”). Dzięki temu możemy łatwo porównać zróżnicowanie cen w różnych częściach miasta i zauważyć ewentualne wartości odstające (tzw. outliery). Z wykresu wynika, że w centralnych dzielnicach ceny są wyraźnie wyższe, natomiast na obrzeżach Warszawy kształtują się na niższym poziomie. Jednocześnie widać różnice między rynkiem pierwotnym a wtórnym – w niektórych dzielnicach nowe inwestycje są droższe, w innych te różnice są mniejsze. Warto zwrócić uwagę na szerokość pudełek (zakres międzykwartylowy), która pokazuje rozrzut cen w danej dzielnicy oraz pozwala oszacować, gdzie koncentruje się większość ofert.
+                </p>
+                {{ fig['box_cena_dzielnica'] | safe }}
+              </div>
+
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h2>Średnia cena za mieszkanie z podziałem na dzielnice</h2>
+                <div class="row gy-4">
+                  <div class="col-lg-6" data-aos="fade-up">
+                    <div class="portfolio-description">
+                      <h2>Rynek pierwotny</h2>
+                      {{ fig['map_cena_pierwotny'] | safe }}
+                      <br>
+                      <p>
+                        Na rynku pierwotnym ceny całkowite mieszkań są generalnie wyższe, co może wynikać z zastosowania nowoczesnych technologii, wyższych standardów wykończenia oraz prestiżu nowych inwestycji.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-lg-6" data-aos="fade-up">
+                    <div class="portfolio-description">
+                      <h2>Rynek wtórny</h2>
+                      {{ fig['map_cena_wtorny'] | safe }}
+                      <br>
+                      <p>
+                        Rynek wtórny prezentuje niższe ceny całkowite, a analiza ceny za metr kwadratowy dodatkowo pozwala ocenić, że koszty nabycia nieruchomości mogą być bardziej konkurencyjne w określonych dzielnicach.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h2>Wnioski z Analizy</h2>
+                <p>
+                  Jednym z kluczowych wniosków jest wyraźna różnica w cenach mieszkań pomiędzy rynkiem pierwotnym a wtórnym w zależności od położenia dzielnicy. W centralnych obszarach nowe inwestycje często są droższe niż lokale z rynku wtórnego, natomiast na obrzeżach zdarza się, że mieszkania w nowym budownictwie bywają tańsze niż te oferowane na rynku wtórnym.
+                </p>
+              </div>
+              <ul>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Standard i segment nieruchomości</h4>
+                    <p>
+                      W centrum deweloperzy zwykle realizują projekty o wyższym standardzie (m.in. budynki apartamentowe, inwestycje premium), co przekłada się na wyższe koszty zakupu. Natomiast na obrzeżach nowo budowane mieszkania są często kierowane do bardziej masowego odbiorcy i charakteryzują się niższą ceną jednostkową.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Lokalizacja i prestiż</h4>
+                    <p>
+                      Centralne dzielnice cieszą się największym zainteresowaniem ze względu na dostęp do infrastruktury, komunikacji miejskiej i atrakcji kulturalnych. Taka lokalizacja automatycznie podnosi wartość nowych inwestycji. Z kolei w dzielnicach peryferyjnych ziemia jest tańsza, a deweloperzy mogą sobie pozwolić na oferowanie lokali w bardziej konkurencyjnych cenach.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Stan techniczny i wiek budynków</h4>
+                    <p>
+                      Na rynku wtórnym w centrum można znaleźć starsze kamienice lub budynki z wielkiej płyty, których standard bywa niższy, co wpływa na ostateczną cenę. W dzielnicach oddalonych od centrum wtórne lokale mogą być z kolei nowsze lub większe, co winduje ich wartość.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Dostępność i podaż</h4>
+                    <p>
+                      W niektórych obszarach podaż nowych mieszkań jest ograniczona (np. ze względu na brak terenów pod zabudowę w ścisłym centrum), co dodatkowo podnosi ceny. Na obrzeżach miasta dostępność gruntów jest większa, co sprzyja większej konkurencji wśród deweloperów i pozwala utrzymać ceny na niższym poziomie.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Preferencje nabywców</h4>
+                    <p>
+                      Klienci poszukujący mieszkania w centrum często są skłonni zapłacić więcej za nowoczesne udogodnienia i prestiżową lokalizację. Z kolei na peryferiach ważniejszy bywa metraż oraz niższy koszt, co wpływa na strukturę cen zarówno na rynku pierwotnym, jak i wtórnym.
+                    </p>
+                  </li>
+                </div>
+              </ul>
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <p>
+                  Dzięki tym czynnikom obserwujemy wyraźne rozbieżności cen w poszczególnych dzielnicach, a także różnice w wartościach mieszkań między rynkiem pierwotnym i wtórnym.
+                </p>
+             </div>
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <h2>Podsumowanie</h2>
+                <p>
+                  Analiza wykresów dotyczących mieszkań wystawionych na sprzedaż w Warszawie ukazuje wyraźny podział cenowy między poszczególnymi dzielnicami oraz między rynkiem pierwotnym a wtórnym. Dzielnice centralne oraz o ugruntowanej pozycji na rynku cechują się najwyższymi cenami, natomiast obszary peryferyjne oferują bardziej przystępne cenowo rozwiązania. Takie spostrzeżenia są kluczowe dla wszystkich uczestników rynku – od inwestorów, przez deweloperów, aż po osoby prywatne planujące zakup mieszkania. Prezentowane materiały, łączące wizualizacje z klarownymi wnioskami, mają na celu ułatwić podejmowanie decyzji oraz lepsze zrozumienie dynamiki warszawskiego rynku nieruchomości.
+                </p>
+              </div>
+
+              <div class="testimonial-item">
+
+                <div>
+                  <img src="static/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                  <h3>Piotr Pawlak</h3>
+                  <h4>Autor</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  {% include "footer.html" %}

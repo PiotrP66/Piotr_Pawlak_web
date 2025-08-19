@@ -1,0 +1,291 @@
+{% include "header.html" %}
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/">Strona startowa</a></li>
+            <li class="current">Web scraping</li>
+          </ol>
+        </nav>
+        <h1>Szczególy projektu</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-between gy-4 mt-4">
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-description">
+              
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4">
+                  <h1>
+                    Web Scraping: Automatyczne zbieranie danych z ogłoszeń mieszkań na sprzedaż z serwisu Otodom.pl
+                  </h1>
+                </div>
+              </div>
+
+              
+              <div class="container py-4" data-aos="fade-up" data-aos-delay="100">
+                  </h2>
+                  <p>
+                    Projekt ma na celu automatyczne pozyskiwanie danych z serwisu Otodom.pl, agregującego ogłoszenia sprzedaży mieszkań. Zgromadzone dane z rynku pierwotnego i wtórnego Warszawy posłużą do dalszej analizy trendów cenowych, preferencji kupujących oraz charakterystyki dostępnych nieruchomości.
+                  </p>
+              </div>
+
+              <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="portfolio-description">
+                  <h2>
+                    <a href="https://www.otodom.pl/">
+                      <img src="static/assets/img/portfolio/otodom_logo_primary.png" class="img-fluid" alt="otodom logo">
+                    </a>
+                </div>
+              </div>
+
+              <div class="portfolio-description">
+                <div class="portfolio-details-slider swiper init-swiper">
+                  <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "speed": 600,
+                      "autoplay": {
+                        "delay": 5000
+                      },
+                      "slidesPerView": "auto",
+                      "navigation": {
+                        "nextEl": ".swiper-button-next",
+                        "prevEl": ".swiper-button-prev"
+                      },
+                      "pagination": {
+                        "el": ".swiper-pagination",
+                        "type": "bullets",
+                        "clickable": true
+                      }
+                    }
+                  </script>
+                  <div class="swiper-wrapper align-items-center">
+        
+                    <div class="swiper-slide">
+                      <img src="static/assets/img/portfolio/otodom_1.jpg" alt="">
+                    </div>
+        
+                    <div class="swiper-slide">
+                      <img src="static/assets/img/portfolio/otodom_2.jpg" alt="">
+                    </div>
+        
+                    <div class="swiper-slide">
+                      <img src="static/assets/img/portfolio/otodom_3.jpg" alt="">
+                    </div>
+        
+                  </div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+
+              <!-- Services Section -->
+              <section id="services" class="services section">
+
+                <!-- Section Title -->
+                <div class="container section-title py-1" data-aos="fade-up">
+                  <h2>Technologie i biblioteki</h2>
+                </div><!-- End Section Title -->
+
+                <div class="container">
+
+                  <div class="row gy-4">
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                      <div class="service-item item-cyan position-relative">
+                        <div class="icon">
+                          <img src="static/assets/img/portfolio/python_icon.svg" class="img-fluid"></img>
+                        </div>
+                        <a href="https://www.python.org/" class="stretched-link">
+                          <h3>Python</h3>
+                        </a>
+                        <p>
+                          Język programowania wykorzystany do implementacji skryptu.
+                        </p>
+                      </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                      <div class="service-item position-relative">
+                        <div class="icon">
+                          <img src="static/assets/img/portfolio/selenium_icon.svg" class="img-fluid"></img>
+                        </div>
+                        <a href="https://www.selenium.dev/" class="stretched-link">
+                          <h3>Selenium WebDriver</h3>
+                        </a>
+                        <p>
+                          Automatyzacja przeglądarki internetowej, symulacja interakcji użytkownika.
+                        </p>
+                      </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                      <div class="service-item item-teal position-relative">
+                        <div class="icon">
+                          <img src="static/assets/img/portfolio/pandas_icon.svg" class="img-fluid"></img>
+                        </div>
+                        <a href="https://pandas.pydata.org/" class="stretched-link">
+                          <h3>Pandas</h3>
+                        </a>
+                        <p>
+                          Biblioteka do analizy i manipulacji danymi, formatowanie i zapis danych do CSV.
+                        </p>
+                      </div>
+                    </div><!-- End Service Item -->
+
+                  </div>
+
+                </div>
+
+              </section><!-- /Services Section -->
+
+              <div class="container section-title py-1" data-aos="fade-up" data-aos-delay="100">
+                <h2>
+                  Opis programu
+                </h2>
+              </div>
+
+              <ul>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Inicjalizacja przeglądarki</h4>
+                    <p>
+                      Wykorzystując bibliotekę Selenium, skrypt uruchamia przeglądarkę Chrome w tle, co pozwala na interakcję ze stroną internetową.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Pobranie listy URL-i ogłoszeń</h4>
+                    <p>
+                      Program przechodzi przez kolejne strony wyników wyszukiwania dla mieszkań spełniających określone kryteria (5-pokojowe, Warszawa, do 1.1 mln PLN). Z każdej strony zbierane są unikalne linki do poszczególnych ogłoszeń.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Zapis URL-i</h4>
+                    <p>
+                      Zebrane adresy URL są tymczasowo zapisywane do pliku CSV, co stanowi pierwszy etap pozyskiwania danych.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Scrapowanie danych z poszczególnych ogłoszeń</h4>
+                    <p>
+                      Następnie program iteruje po zapisanych URL-ach. Dla każdego URL-a otwiera nową kartę w przeglądarce i za pomocą Selenium lokalizuje oraz ekstrahuje kluczowe informacje z ogłoszenia, takie jak cena, metraż, lokalizacja, liczba pokoi, informacje dodatkowe i dane o sprzedawcy.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Przetwarzanie i zapis danych</h4>
+                    <p>
+                      Zebrane dane z każdego ogłoszenia są strukturyzowane przy użyciu biblioteki Pandas i dodawane do DataFrame. W celu zabezpieczenia przed utratą danych, częściowy zapis do pliku CSV następuje co kilka przetworzonych ogłoszeń.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Finalny zapis danych</h4>
+                    <p>
+                      Po przetworzeniu wszystkich URL-i, kompletne dane są zapisywane do pliku CSV z aktualną datą w nazwie, co ułatwia śledzenie i organizację zgromadzonych informacji.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Obsługa błędów</h4>
+                    <p>
+                      Program zawiera mechanizmy obsługi błędów, informujące o ewentualnych problemach podczas scrapowania danych z poszczególnych ogłoszeń.
+                    </p>
+                  </li>
+                </div>
+              </ul>
+
+              <div class="container section-title py-2" data-aos="fade-up" data-aos-delay="100">
+                <h2>
+                  <i class="fa-brands fa-python"></i>
+                  Kod źródłowy - main.py
+                </h2>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <div class="portfolio-info">
+                    <a href="#" class="btn-visit align-self-start">Github</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="language-python">
+                  <!-- Kod Python -->
+                  <pre>
+                  def greet():
+                    print("Hello, world!")
+                  </pre>
+                </div>
+              </div>
+
+              <div class="container section-title py-1" data-aos="fade-up" data-aos-delay="100">
+                <h2>
+                  <i class="fa-brands fa-python"></i>
+                  Kod źródłowy - utils.py
+                </h2>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <div class="portfolio-info">
+                    <a href="#" class="btn-visit align-self-start">Github</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="language-python">
+                  <!-- Kod Python -->
+                  <pre>
+                  def greet():
+                    print("Hello, world!")
+                  </pre>
+                </div>                
+              </div>
+
+              <div class="container section-title py-1" data-aos="fade-up" data-aos-delay="100">
+                <h2>Podsumowanie</h2>
+              </div>
+
+              <div class="container py-4" data-aos="fade-up" data-aos-delay="100">
+                <p>
+                  Zaprezentowany projekt demonstruje moje umiejętności w automatycznym pozyskiwaniu danych z serwisu Otodom.pl przy użyciu Pythona, Selenium i Pandas. Skrypt efektywnie zbiera szczegółowe informacje o ofertach sprzedaży mieszkań, automatyzując czasochłonny proces manualnego przeglądania. Projekt prezentuje kompetencje w web scrapingu (praca z Selenium) oraz przetwarzaniu i strukturyzowaniu danych (wykorzystanie Pandas do zapisu do CSV). Potencjalne dalsze kroki obejmują rozszerzenie o inne serwisy i zaawansowaną analizę.
+                </p>
+              </div>            
+
+            <div class="testimonial-item">
+              <div>
+                <img src="static/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Piotr Pawlak</h3>
+                <h4>Autor</h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  {% include "footer.html" %}

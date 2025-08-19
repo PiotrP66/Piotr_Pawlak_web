@@ -1,0 +1,244 @@
+{% include "header.html" %}
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/">Strona startowa</a></li>
+            <li class="current">Backend</li>
+          </ol>
+        </nav>
+        <h1>Szczególy projektu</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-between gy-4 mt-4">
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-description">
+              
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4">
+                  <h1>
+                    Backend strony internetowej <a href="piotrpawlak.pl">piotrpawlak.pl</a>
+                  </h1>
+                </div>
+              </div>
+
+              
+              <div class="container py-4" data-aos="fade-up" data-aos-delay="100">
+                  </h2>
+                  <p>
+                    Projekt ma na celu automatyczne pozyskiwanie danych z serwisu Otodom.pl, agregującego ogłoszenia sprzedaży mieszkań. Zgromadzone dane z rynku pierwotnego i wtórnego Warszawy posłużą do dalszej analizy trendów cenowych, preferencji kupujących oraz charakterystyki dostępnych nieruchomości.
+                  </p>
+              </div>
+
+              <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="portfolio-description">
+                  <h2>
+                    <a href="https://www.otodom.pl/">
+                      <img src="static/assets/img/portfolio/otodom_logo_primary.png" class="img-fluid" alt="otodom logo">
+                    </a>
+                </div>
+              </div>
+
+              <div class="portfolio-description">
+                <div class="portfolio-details-slider swiper init-swiper">
+                  <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "speed": 600,
+                      "autoplay": {
+                        "delay": 5000
+                      },
+                      "slidesPerView": "auto",
+                      "navigation": {
+                        "nextEl": ".swiper-button-next",
+                        "prevEl": ".swiper-button-prev"
+                      },
+                      "pagination": {
+                        "el": ".swiper-pagination",
+                        "type": "bullets",
+                        "clickable": true
+                      }
+                    }
+                  </script>
+                  <div class="swiper-wrapper align-items-center">
+        
+                    <div class="swiper-slide">
+                      <img src="static/assets/img/portfolio/otodom_1.jpg" alt="">
+                    </div>
+        
+                    <div class="swiper-slide">
+                      <img src="static/assets/img/portfolio/otodom_2.jpg" alt="">
+                    </div>
+        
+                    <div class="swiper-slide">
+                      <img src="static/assets/img/portfolio/otodom_3.jpg" alt="">
+                    </div>
+        
+                  </div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+
+              <!-- Services Section -->
+              <section id="services" class="services section">
+
+                <!-- Section Title -->
+                <div class="container section-title py-1" data-aos="fade-up">
+                  <h2>Technologie i biblioteki</h2>
+                </div><!-- End Section Title -->
+
+                <div class="container">
+
+                  <div class="row gy-4">
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                      <div class="service-item item-cyan position-relative">
+                        <div class="icon">
+                          <img src="static/assets/img/portfolio/python_icon.svg" class="img-fluid"></img>
+                        </div>
+                        <a href="https://www.python.org/" class="stretched-link">
+                          <h3>Python</h3>
+                        </a>
+                        <p>
+                          Język programowania wykorzystany do implementacji skryptu.
+                        </p>
+                      </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                      <div class="service-item position-relative">
+                        <div class="icon">
+                          <img src="static/assets/img/portfolio/flask_icon.svg" class="img-fluid"></img>
+                        </div>
+                        <a href="https://flask.palletsprojects.com/en/stable/" class="stretched-link">
+                          <h3>Flask</h3>
+                        </a>
+                        <p>
+                          Framework webowy WSGI, umożliwiający budowę funkcjonalności aplikacji internetowych.
+                        </p>
+                      </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                      <div class="service-item item-teal position-relative">
+                        <div class="icon">
+                          <img src="static/assets/img/portfolio/postgresql_icon.svg" class="img-fluid"></img>
+                        </div>
+                        <a href="https://www.postgresql.org/" class="stretched-link">
+                          <h3>PostgreSQL</h3>
+                        </a>
+                        <p>
+                          Relacyjny system bazy danych, wykorzystywany do przechowywania i efektywnego zarządzania danymi w projekcie.
+                        </p>
+                      </div>
+                    </div><!-- End Service Item -->
+
+                  </div>
+
+                </div>
+
+              </section><!-- /Services Section -->
+
+              <div class="container section-title py-1" data-aos="fade-up" data-aos-delay="100">
+                <h2>
+                  Założenia projektu
+                </h2>
+              </div>
+
+              <ul>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Wykorzystanie gotowego szablonu z <a href="https://bootstrapmade.com/">BootstrapMade.com</a></h4>
+                    <p>
+                      Wybranie jednego z dostępnych darmowych szablonów z serwisu bootstrapmade.com celem przyspieszenia prac nad frontendem strony, a następnie dostosowanie układu i treści tak, aby w prosty sposób zaprezentować CV, portfolio projektowe oraz umożliwić kontakt poprzez formularz.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Backend – Python i Flask</h4>
+                    <p>Implementacja serwera aplikacji w technologii Flask, co pozwala na szybkie tworzenie lekkich i wydajnych aplikacji webowych.</p>
+                    <p>Definicja ścieżek obsługujących żądania HTTP (GET, POST) zarówno dla wyświetlania stron (renderowanie szablonów), jak i dla komunikacji z formularzem kontaktowym.</p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Baza danych – PostgreSQL</h4>
+                    <p>
+                      Użycie PostgreSQL jako relacyjnej bazy danych do przechowywania informacji o projektach.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Proces uruchomienia strony internetowej</h4>
+                    <p>
+                      Przygotowanie konfiguracji i uruchomienie aplikacji w środowisku Heroku.
+                    </p>
+                  </li>
+                </div>
+              </ul>
+
+              <div class="container section-title py-2" data-aos="fade-up" data-aos-delay="100">
+                <h2>
+                  <i class="fa-brands fa-python"></i>
+                  Kod źródłowy - main.py
+                </h2>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <div class="portfolio-info">
+                    <a href="#" class="btn-visit align-self-start">Github</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="language-python">
+                  <!-- Kod Python -->
+                  <pre>
+                  def greet():
+                    print("Hello, world!")
+                  </pre>
+                </div>
+              </div>
+
+              <div class="container section-title py-1" data-aos="fade-up" data-aos-delay="100">
+                <h2>Podsumowanie</h2>
+              </div>
+
+              <div class="container py-4" data-aos="fade-up" data-aos-delay="100">
+                <p>
+                  Powyższe założenia mają na celu stworzenie funkcjonalnej, wydajnej i przyjaznej w obsłudze aplikacji webowej. Zastosowanie Flaska oraz PostgreSQL daje duże możliwości skalowania i rozbudowy projektu, a wykorzystanie gotowego szablonu z BootstrapMade pozwala skupić się przede wszystkim na warstwie logicznej i integracji z bazą danych.
+                </p>
+              </div>            
+
+            <div class="testimonial-item">
+              <div>
+                <img src="static/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Piotr Pawlak</h3>
+                <h4>Autor</h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  {% include "footer.html" %}
