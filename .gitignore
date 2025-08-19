@@ -7,6 +7,9 @@
 Icon
 ._*
 
+update_db.py
+test.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
