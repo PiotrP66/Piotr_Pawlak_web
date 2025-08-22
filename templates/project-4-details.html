@@ -1,0 +1,257 @@
+{% include "header.html" %}
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/">Strona startowa</a></li>
+            <li class="current">Opracowanie wykresów</li>
+          </ol>
+        </nav>
+        <h1>Szczególy projektu</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-between gy-4 mt-4">
+
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-description">
+              
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row gy-4">
+                  <h1>
+                    Opracowanie wykresów do analizy ogłoszeń nieruchomości
+                  </h1>
+                </div>
+              </div>
+
+              
+              <div class="container py-4" data-aos="fade-up" data-aos-delay="100">
+                  </h2>
+                  <p>
+                    W projekcie przeprowadziłem kompletny proces przygotowania danych i wizualizacji ogłoszeń nieruchomości. Celem było przygotowanie czytelnych wykresów i tabel, które umożliwiają dalszą analizę rynku (porównania cen, analiza geograficzna, zależności między ceną, metrażem i liczbą pokoi). Prace wykonywałem w środowisku Google Colab z wykorzystania języka Pythona oraz z bibliotek Pandas, NumPy, Plotly oraz GeoJSON do mapowania.
+                  </p>
+              </div>
+
+              <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                <div class="portfolio-description">
+                  <h2>
+                    <a href="https://www.otodom.pl/">
+                      <img src="static/assets/img/portfolio/otodom_logo_primary.png" class="img-fluid" alt="otodom logo">
+                    </a>
+                </div>
+              </div>
+
+              <div class="portfolio-description">
+                <div class="portfolio-details-slider swiper init-swiper">
+                  <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "speed": 600,
+                      "autoplay": {
+                        "delay": 5000
+                      },
+                      "slidesPerView": "auto",
+                      "navigation": {
+                        "nextEl": ".swiper-button-next",
+                        "prevEl": ".swiper-button-prev"
+                      },
+                      "pagination": {
+                        "el": ".swiper-pagination",
+                        "type": "bullets",
+                        "clickable": true
+                      }
+                    }
+                  </script>
+                  <div class="swiper-wrapper align-items-center">
+        
+                    <div class="swiper-slide">
+                      <img src="static/assets/img/portfolio/otodom_1.jpg" alt="">
+                    </div>
+        
+                    <div class="swiper-slide">
+                      <img src="static/assets/img/portfolio/otodom_2.jpg" alt="">
+                    </div>
+        
+                    <div class="swiper-slide">
+                      <img src="static/assets/img/portfolio/otodom_3.jpg" alt="">
+                    </div>
+        
+                  </div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-pagination"></div>
+                </div>
+              </div>
+
+              <!-- Services Section -->
+              <section id="services" class="services section">
+
+                <!-- Section Title -->
+                <div class="container section-title py-1" data-aos="fade-up">
+                  <h2>Technologie i biblioteki</h2>
+                </div><!-- End Section Title -->
+
+                <div class="container">
+
+                  <div class="row gy-4">
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                      <div class="service-item item-cyan position-relative">
+                        <div class="icon">
+                          <img src="static/assets/img/portfolio/python_icon.svg" class="img-fluid"></img>
+                        </div>
+                        <a href="https://www.python.org/" class="stretched-link">
+                          <h3>Python</h3>
+                        </a>
+                        <p>
+                          Język programowania wykorzystany do implementacji skryptu.
+                        </p>
+                      </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                      <div class="service-item position-relative">
+                        <div class="icon">
+                          <img src="static/assets/img/portfolio/pandas_icon.svg" class="img-fluid"></img>
+                        </div>
+                        <a href="https://pandas.pydata.org/" class="stretched-link">
+                          <h3>Pandas</h3>
+                        </a>
+                        <p>
+                          Biblioteka do analizy i manipulacji danymi, formatowanie i zapis danych do CSV.
+                        </p>
+                      </div>
+                    </div><!-- End Service Item -->
+
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                      <div class="service-item item-teal position-relative">
+                        <div class="icon">
+                          <img src="static/assets/img/portfolio/plotly_icon.svg" class="img-fluid"></img>
+                        </div>
+                        <a href="https://plotly.com/python/" class="stretched-link">
+                          <h3>Plotly</h3>
+                        </a>
+                        <p>
+                          Biblioteka pozwalająca w prosty i szybki sposób tworzyć interaktywne i estetyczne wykresy.
+                        </p>
+                      </div>
+                    </div><!-- End Service Item -->
+
+                  </div>
+
+                </div>
+
+              </section><!-- /Services Section -->
+
+              <div class="container section-title py-1" data-aos="fade-up" data-aos-delay="100">
+                <h2>
+                  Założenia projektu
+                </h2>
+              </div>
+
+              <ul>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Wczytanie i filtrowanie danych</h4>
+                    <p>
+                      Wczytanie pliku CSV z danymi ogłoszeń, odfiltrowanie wybranych jednostek administracyjnych oraz przygotowanie danych pomocniczych.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Formatowanie i konwersje formatów</h4>
+                    <p>Konwersja pól z datami do typu datetime oraz weryfikacja pozostalłych danych (ceny, metraż).</p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Wstępna eksploracja i analiza</h4>
+                    <p>
+                      Podstawowe statystyki (kształt tabeli, opis kolumn, rozkłady, percentyle). Identyfikacja braków danych i ekstremów w polach z cenami oraz metrażem.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Czyszczenie i przygotowanie danych</h4>
+                    <p>
+                      Usuwanie lub filtrowanie wpisów nietypowych, obsługa braków, normalizacja nazw dzielnic/rynków i tworzenie kolumn pomocniczych.
+                    </p>
+                  </li>
+                </div>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <li>
+                    <h4>Przygotowanie wykresów</h4>
+                    <p>
+                      <p>Kołowy — udział ogłoszeń wg rynku (pierwotny/wtórny).</p>
+                      <P>Histogramy — rozkłady cen, cen za m² i metrażu (często z log-skalą dla cen).</P>
+                      <P>Boxploty — rozkłady cen i cen za m² z podziałem na rynek/dzielnicę.</P>
+                      <P>Scatter — zależności: cena ↔ cena za m², cena ↔ metraż, liczba pokoi ↔ cena (rozmiary punktów odzwierciedlają np. liczbę pokoi).</P>
+                      <P>Bar charts — średnie/mediany cen wg dzielnic.</P>
+                      <P>Choropleth (mapa) — wizualizacja średniej ceny za m² na mapie Warszawy przy użyciu GeoJSON.</P>
+                      <P>Każdy wykres został zapisany również jako plik HTML, co ułatwi publikację interaktywnych wykresów.</P>
+                    </p>
+                  </li>
+                </div>
+              </ul>
+
+              <div class="container section-title py-2" data-aos="fade-up" data-aos-delay="100">
+                <h2>
+                  <i class="fa-brands fa-python"></i>
+                  Kod źródłowy - main.py
+                </h2>
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+                  <div class="portfolio-info">
+                    <a href="#" class="btn-visit align-self-start">Github</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="language-python">
+                  <!-- Kod Python -->
+                  <pre>
+                  def greet():
+                    print("Hello, world!")
+                  </pre>
+                </div>
+              </div>
+
+              <div class="container section-title py-1" data-aos="fade-up" data-aos-delay="100">
+                <h2>Podsumowanie</h2>
+              </div>
+
+              <div class="container py-4" data-aos="fade-up" data-aos-delay="100">
+                <p>
+                  Powyższe założenia mają na celu stworzenie funkcjonalnej, wydajnej i przyjaznej w obsłudze aplikacji webowej. Zastosowanie Flaska oraz PostgreSQL daje duże możliwości skalowania i rozbudowy projektu, a wykorzystanie gotowego szablonu z BootstrapMade pozwala skupić się przede wszystkim na warstwie logicznej i integracji z bazą danych.
+                </p>
+              </div>            
+
+            <div class="testimonial-item">
+              <div>
+                <img src="static/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Piotr Pawlak</h3>
+                <h4>Autor</h4>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  {% include "footer.html" %}
