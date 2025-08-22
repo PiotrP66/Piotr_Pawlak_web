@@ -72,6 +72,11 @@ def project_3():
     return render_template('project-3-details.html')
 
 
+@app.route('/project_4')
+def project_4():
+    return render_template('project-4-details.html')
+
+
 @app.route('/send-email', methods=['POST'])
 def send_mail():
     name = request.form.get('name')
