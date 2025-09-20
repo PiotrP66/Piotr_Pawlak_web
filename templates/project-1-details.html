@@ -30,7 +30,7 @@
                     <div class="portfolio-description">
                       <h2>Analiza Rynku Nieruchomości w Warszawie – Mieszkania na Sprzedaż</h2>
                       <p>
-                        Przedstawiona analiza skupia się na rynku mieszkań wystawionych na sprzedaż w Warszawie, z podziałem na rynek pierwotny oraz rynek wtórny. Celem analizy jest ukazanie zróżnicowania cenowego nieruchomości w poszczególnych dzielnicach stolicy, zarówno pod kątem średniej ceny całego mieszkania, jak i ceny za metr kwadratowy. Prezentowane wykresy mają pomóc potencjalnym nabywcom oraz inwestorom w lepszym zrozumieniu specyfiki rynku warszawskiego.
+                        Przedstawiona analiza skupia się na rynku nieruchomości wystawionych na sprzedaż w Warszawie, z podziałem na rynek pierwotny oraz rynek wtórny. Celem analizy jest ukazanie zróżnicowania cenowego nieruchomości w poszczególnych dzielnicach stolicy, zarówno pod kątem średniej ceny całkowitej, jak i ceny za metr kwadratowy. Prezentowane wykresy mają pomóc potencjalnym nabywcom oraz inwestorom w lepszym zrozumieniu specyfiki rynku warszawskiego.
                       </p>
                       <img src="static/assets/img/portfolio/city.jpeg" class="img-fluid" alt="city">
                     </div>
@@ -42,12 +42,15 @@
                     </div>
                   </div>
                 </div>
+                <p>
+                  <b>Warto zauważyć, że aż 15,45 % ogłoszeń z rynku pierwotnego nie ma podanej ceny w ogłoszeniu, a otrzymuje się ją dopiero po kontakcie z deweloperem.</b>
+                </p>
               </div>
 
               <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <h2>Ilość ogłoszeń w zależności od ceny za m<sup>2</sup><br>- rynek pierwotny i wtórny</h2>
                 <p>
-                  Na wykresie przedstawiono liczbę ogłoszeń sprzedaży nieruchomości w Warszawie (zarówno z rynku pierwotnego, jak i wtórnego) w zależności od ceny za metr kwadratowy. Najwięcej ofert mieści się w przedziale od około <b>14 000</b> do <b>20 000 zł/m²</b>. Średnia cena wynosi <b>18 495,41 zł/m²</b> przy odchyleniu standardowym <b>5 876,03 zł</b>, co wskazuje na dość duże zróżnicowanie cen. Pierwszy kwartyl (25% najtańszych ofert) to <b>14 782,61 zł/m²</b>, mediana (50%) wynosi <b>17 257,56 zł/m²</b>, a trzeci kwartyl (75%) sięga <b>20 549,07 zł/m²</b>. Najniższa zanotowana cena to <b>4 344,53 zł/m²</b>, natomiast najwyższa przekracza <b>97 000 zł/m²</b>.
+                  Na wykresie przedstawiono liczbę ogłoszeń sprzedaży nieruchomości w Warszawie (zarówno z rynku pierwotnego, jak i wtórnego) w zależności od ceny za metr kwadratowy. Najwięcej ofert mieści się w przedziale od około <b>13 000</b> do <b>20 000 zł/m²</b>. Średnia cena wynosi <b>18 711,95 zł/m²</b> przy odchyleniu standardowym <b>6 590,88 zł</b>, co wskazuje na dość duże zróżnicowanie cen. Pierwszy kwartyl (25% najtańszych ofert) to <b>14 687,50 zł/m²</b>, mediana (50%) wynosi <b>17 385,84 zł/m²</b>, a trzeci kwartyl (75%) sięga <b>20 836,13 zł/m²</b>. Najniższa zanotowana cena to <b>5 587,49 zł/m²</b>, natomiast najwyższa przekracza <b>92 000 zł/m²</b>.
                 </p>
                 {{ fig['hist_liczba_cena_m2'] | safe }}
               </div>
@@ -55,7 +58,7 @@
               <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <h2>Ilość ogłoszeń w zależności od metrażu<br>- rynek pierwotny i wtórny</h2>
                 <p>
-                  Na wykresie przedstawiono liczbę ogłoszeń sprzedaży nieruchomości w Warszawie z podziałem na metraż. Największą grupę ofert stanowią mieszkania o powierzchni w przedziale około <b>40–60 m²</b>, co dobrze widać w okolicach mediany (<b>53 m²</b>). Średni metraż wynosi <b>59,92 m²</b> przy odchyleniu standardowym <b>31,37 m²</b>, co wskazuje na dość duże zróżnicowanie ofert. Najmniejsza zarejestrowana powierzchnia to <b>14,53 m²</b>, a największa aż <b>800 m²</b>. Pierwszy kwartyl (25% najmniejszych mieszkań) osiąga <b>41 m²</b>, natomiast 75% ofert nie przekracza <b>68 m²</b>. Dane te pokazują, że najpopularniejsze są lokale o średnim metrażu, jednak na rynku dostępne są również znacznie większe nieruchomości.
+                  Na wykresie przedstawiono liczbę ogłoszeń sprzedaży nieruchomości w Warszawie z podziałem na metraż. Największą grupę ofert stanowią mieszkania o powierzchni w przedziale około <b>36-58 m²</b>, co dobrze widać w okolicach mediany (<b>53 m²</b>). Średni metraż wynosi <b>60,4 m²</b> przy odchyleniu standardowym <b>31.44 m²</b>, co wskazuje na dość duże zróżnicowanie ofert. Najmniejsza zarejestrowana powierzchnia to <b>14,5 m²</b>, a największa aż <b>456 m²</b>. Pierwszy kwartyl (25% najmniejszych mieszkań) osiąga <b>41 m²</b>, natomiast 75% ofert nie przekracza <b>69 m²</b>. Dane te pokazują, że najpopularniejsze są lokale o średnim metrażu, jednak na rynku dostępne są również znacznie większe nieruchomości.
                 </p>
                 {{ fig['hist_liczba_metraz'] | safe }} 
               </div>
@@ -63,28 +66,28 @@
               <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <h2>Średnia cena za m<sup>2</sup> według dzielnicy<br>- rynek pierwotny</h2>
                 <p>
-                  Na podstawie poniższych wykresów widać, że wśród warszawskich dzielnic na rynku pierwotnym najwyższe ceny za metr kwadratowy osiąga Śródmieście (ponad <b>27 000 zł/m²</b>), a niewiele niższe notują Wola i Ochota (około <b>25 000 zł/m²</b>). Z kolei najniższe stawki odnotowuje się w dzielnicach położonych bardziej na obrzeżach, takich jak Wesoła, Rembertów czy Ząbki.
+                  Na podstawie poniższych wykresów widać, że wśród warszawskich dzielnic na rynku pierwotnym najwyższe ceny za metr kwadratowy osiąga Śródmieście (prawie <b>29 000 zł/m²</b>), a niewiele niższe notują Wola i Ochota (około <b>27 000 zł/m²</b>). Z kolei najniższe stawki odnotowuje się w dzielnicach położonych bardziej na obrzeżach, takich jak Białołęka, Rembertów czy Wesoła.
                 </p>
                 {{ fig['bar_pierwotny_cena_m2_dzielnica'] | safe }} 
               </div>
               <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <h2>Średnia cena za mieszkanie według dzielnicy<br>- rynek pierwotny</h2>
                 <p>
-                  Podobna tendencja widoczna jest w przypadku całkowitych cen mieszkań: Śródmieście wyróżnia się najwyższą średnią wartością nieruchomości, przekraczającą <b>2 000 000 zł</b>, podczas gdy w dzielnicach o niższych cenach, jak Białołęka czy Wesoła, przeciętne oferty często nie przekraczają <b>800 000 zł</b>
+                  Zupełnie inaczej wypadają całkowite ceny nieruchomości: Wilanów wyróżnia się najwyższą średnią wartością nieruchomości, wynoszącą <b>1 870 000 zł</b>, podczas gdy w dzielnicach o niższych cenach, jak Białołęka czy Rembertów, przeciętne oferty często nie przekraczają <b>700 000 zł</b>
                 </p>
                 {{ fig['bar_pierwotny_cena_dzielnica'] | safe }}
               </div>
               <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <h2>Średnia cena za m<sup>2</sup> według dzielnicy<br>- rynek wtórny</h2>
                 <p>
-                  Na rynku wtórnym ceny za metr kwadratowy są wyraźnie niższe niż w przypadku rynku pierwotnego, przy czym kolejność dzielnic na wykresie jest bardzo podobna. Najwyższe ceny osiąga Śródmieście (ponad <b>27 000 zł/m²</b>), a za nim na podium plasuje się Wola (<b>21 740 zł/m²</b>) i Żoliborz (około <b>20 830 zł/m²</b>). Z kolei najniższe stawki odnotowuje się w dzielnicach położonych bardziej na obrzeżach Warszawy, takich jak Rembertów, Wesoła czy Ząbki.
+                  Na rynku wtórnym ceny za metr kwadratowy są wyraźnie niższe niż w przypadku rynku pierwotnego, przy czym kolejność dzielnic na wykresie jest podobna. Najwyższe ceny osiąga Śródmieście (ponad <b>27 000 zł/m²</b>), a za nim na podium plasuje się Wola (<b>21 220 zł/m²</b>) i Żoliborz (około <b>21 120 zł/m²</b>). Z kolei najniższe stawki odnotowuje się w dzielnicach położonych na obrzeżach Warszawy, takich jak Białołęka, Wesoła czy Rembertów.
                 </p>                  
                 {{ fig['bar_wtorny_cena_m2_dzielnica'] | safe }}
               </div>
               <div class="container" data-aos="fade-up" data-aos-delay="100">
                 <h2>Średnia cena za mieszkanie według dzielnicy<br>- rynek wtórny</h2>
                 <p>
-                  Analizując wykres całkowitych cen oferowanych mieszkań można stwierdzić, że z wykluczeniem najdroższych dzielnic (Śródmieście, Wilanów, Mokotów i Żoliborz), średnia wartość nieruchomości dla pozostałych rejonów miasta jest bardziej wyrównana niż w przypadku rynku pierwotnego i mieści się w zakresie od ok. <b>800 000 zł</b> do <b>1 200 000 zł</b>.
+                  Analizując wykres całkowitych cen oferowanych mieszkań można stwierdzić, że z wykluczeniem najdroższych dzielnic (Śródmieście i Wilanów), średnia wartość nieruchomości dla pozostałych rejonów miasta jest bardziej wyrównana niż w przypadku rynku pierwotnego i mieści się w zakresie od ok. <b>800 000 zł</b> do <b>1 300 000 zł</b>.
                 </p>
                 {{ fig['bar_wtorny_cena_dzielnica'] | safe }}          
               </div>
