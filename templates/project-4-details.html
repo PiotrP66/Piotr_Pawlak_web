@@ -44,8 +44,8 @@
               <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
                 <div class="portfolio-description">
                   <h2>
-                    <a href="https://www.otodom.pl/">
-                      <img src="static/assets/img/portfolio/otodom_logo_primary.png" class="img-fluid" alt="otodom logo">
+                    <a href="https://colab.research.google.com/drive/1i25m62rTI7l1T9A3PBmDyQ9GwKpMRofC?usp=sharing">
+                      <img src="static/assets/img/portfolio/colab_logo.png" class="img-fluid" alt="Google Colab logo">
                     </a>
                 </div>
               </div>
@@ -74,15 +74,15 @@
                   <div class="swiper-wrapper align-items-center">
         
                     <div class="swiper-slide">
-                      <img src="static/assets/img/portfolio/otodom_1.jpg" alt="">
+                      <img src="static/assets/img/portfolio/google_colab_1.png" alt="">
                     </div>
         
                     <div class="swiper-slide">
-                      <img src="static/assets/img/portfolio/otodom_2.jpg" alt="">
+                      <img src="static/assets/img/portfolio/google_colab_2.png" alt="">
                     </div>
         
                     <div class="swiper-slide">
-                      <img src="static/assets/img/portfolio/otodom_3.jpg" alt="">
+                      <img src="static/assets/img/portfolio/google_colab_3.png" alt="">
                     </div>
         
                   </div>
@@ -208,11 +208,11 @@
               <div class="container section-title py-2" data-aos="fade-up" data-aos-delay="100">
                 <h2>
                   <i class="fa-brands fa-python"></i>
-                  Kod źródłowy - main.py
+                  Kod źródłowy
                 </h2>
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
                   <div class="portfolio-info">
-                    <a href="#" class="btn-visit align-self-start">Github</a>
+                    <a href="https://colab.research.google.com/drive/1i25m62rTI7l1T9A3PBmDyQ9GwKpMRofC?usp=sharing" class="btn-visit align-self-start">Google Colab</a>
                   </div>
                 </div>
               </div>
@@ -221,8 +221,26 @@
                 <div class="language-python">
                   <!-- Kod Python -->
                   <pre>
-                  def greet():
-                    print("Hello, world!")
+                  Fragment kodu:
+
+                  fig = px.histogram(data_with_price,
+                      x='Price_PLN',
+                      color='Market',
+                      hover_data=data_with_price.columns,
+                      template='plotly_white',
+                      range_y=(0, 1050),
+                      range_x=(0, 5000000),
+                      color_discrete_map={'wtórny':px.colors.sequential.haline[0],
+                                          'pierwotny':px.colors.sequential.haline[10]},
+                      labels={'Market':'Rynek',
+                              'Price_PLN':'Cena',
+                              'count':'Ilość ogłoszeń'})
+                  fig.update_layout(xaxis_title='<b>Cena nieruchomości</b>',
+                                    yaxis_title='<b>Liczba ogłoszeń</b>')
+
+                  # title='Ilość ogłoszeń w zależnośći od ceny z podziałem na rynek pierwotny/wtórny'
+                  fig.show()
+                  fig.write_html('hist_liczba_cena.html')
                   </pre>
                 </div>
               </div>

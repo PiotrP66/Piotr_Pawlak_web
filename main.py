@@ -1,11 +1,11 @@
-from flask import Flask, render_template, redirect, url_for, request, jsonify
+from dotenv import find_dotenv, load_dotenv
+from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap5
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-from sqlalchemy import Integer, String, Text, LargeBinary
+from sqlalchemy import Integer, String
 import smtplib
 import os
-from dotenv import find_dotenv, load_dotenv
 
 
 # Find and load environment variables
@@ -84,7 +84,8 @@ def send_mail():
     subject = request.form.get('subject')
     msg_body = request.form.get('message')
 
-    msg = f'Subject: {subject}\n\nOd: {from_email}\nAutor: {name}\n\nMessage:\n{msg_body}'
+    msg = f'Subject: {subject}\n\nOd: {from_email}\nAuthor: {name}\n\nMessage:\n{msg_body}'
+    print(msg_body)
 
     my_email = str(os.getenv('MY_EMAIL'))
     my_password = str(os.getenv('MY_PASSWORD'))
