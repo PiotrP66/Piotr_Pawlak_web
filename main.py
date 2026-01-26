@@ -84,7 +84,8 @@ def send_mail():
     subject = request.form.get('subject')
     msg_body = request.form.get('message')
 
-    msg = f'Subject: {subject}\n\nOd: {from_email}\nAuthor: {name}\n\nMessage:\n{msg_body}'
+    msg = f'Subject: {subject}\n\nOd: {from_email}\nAuthor: {name}\n\nMessage:'
+    # \n{msg_body}'
     print(msg_body)
 
     my_email = str(os.getenv('MY_EMAIL'))

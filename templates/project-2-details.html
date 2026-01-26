@@ -224,7 +224,7 @@
                 </h2>
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
                   <div class="portfolio-info">
-                    <a href="#" class="btn-visit align-self-start">Github</a>
+                    <a href="https://github.com/PiotrP66/Oto-dom-web-scraper" class="btn-visit align-self-start">Github</a>
                   </div>
                 </div>
               </div>
@@ -233,8 +233,106 @@
                 <div class="language-python">
                   <!-- Kod Python -->
                   <pre>
-                  def greet():
-                    print("Hello, world!")
+                  import utils as ut
+                  import pandas as pd
+
+
+                  def main():
+
+                      OTODOM_URL = "https://www.otodom.pl/pl/wyniki/sprzedaz/mieszkanie/mazowieckie/warszawa/warszawa/warszawa?limit=72&by=LATEST&direction=ASC"
+
+                      driver = ut.initialize_webdriver()
+                      ut.load_url(driver, OTODOM_URL)
+
+                      last_page_number = ut.find_last_page(driver)
+                      if last_page_number is None:
+                          last_page_number = 1
+                      print(f"Number of pages: {last_page_number}")
+
+                      all_url = pd.DataFrame(columns=["URL"])
+
+                      for current_page in range(1, last_page_number + 1):
+                          print("Current page:", current_page)
+                          page_url = f"{OTODOM_URL}&page={current_page}"
+                          driver.execute_script("window.open('');")
+                          driver.switch_to.window(driver.window_handles[1])
+                          ut.load_url(driver, page_url)
+
+                          page_url = ut.collect_url(driver)
+
+                          all_url = pd.concat([all_url, page_url], ignore_index=True)
+
+                          print("Collected URLs:", len(all_url.URL))
+                          driver.close()
+                          driver.switch_to.window(driver.window_handles[0])
+
+                          current_page += 1
+
+                      ut.save_data_to_csv(all_url, "otodom_url.csv")
+
+                      # SCRAPE LISTINGS
+                      otodom_data_df = pd.DataFrame(columns=["URL",
+                                                            "ID",
+                                                            "Title",
+                                                            "Price_PLN",
+                                                            "Square_meter",
+                                                            "Price_sq_meter",
+                                                            "Rooms",
+                                                            "Street",
+                                                            "Subdistrict",
+                                                            "District",
+                                                            "City",
+                                                            "Province",
+                                                            "Heating",
+                                                            "Floor",
+                                                            "Rent_PLN",
+                                                            "Condition",
+                                                            "Market",
+                                                            "Ownership",
+                                                            "Available_from",
+                                                            "Advertiser_type",
+                                                            "Seller"])
+
+                      url_data = pd.read_csv("data/otodom_url.csv")
+                      all_url_len = len(url_data.URL)
+
+                      errors = 0
+                      current_advert = 0
+
+                      for url in url_data.URL:
+                          print(f"Progress: {current_advert + 1} of {all_url_len}")
+                          current_advert += 1
+
+                          driver.execute_script("window.open('');")
+                          driver.switch_to.window(driver.window_handles[1])
+                          ut.load_url(driver, url)
+
+                          new_data = ut.collect_data(driver)
+                          if new_data:
+                              otodom_data_df.loc[len(otodom_data_df)] = new_data
+                              driver.close()
+                              driver.switch_to.window(driver.window_handles[0])
+
+                              if current_advert % 10 == 0:
+                                  ut.save_data_to_csv(otodom_data_df, "otodom_data.csv")
+                              else:
+                                  continue
+                          else:
+                              errors += 1
+                              print("Error!")
+                              driver.close()
+                              driver.switch_to.window(driver.window_handles[0])
+
+                      driver.close()
+
+                      ut.save_data_to_csv(otodom_data_df, "otodom_data.csv")
+
+                      print("Done!")
+                      print("Errors:", errors)
+
+
+                  if __name__ == '__main__':
+                      main()
                   </pre>
                 </div>
               </div>
@@ -246,7 +344,7 @@
                 </h2>
                 <div class="container" data-aos="fade-up" data-aos-delay="100">
                   <div class="portfolio-info">
-                    <a href="#" class="btn-visit align-self-start">Github</a>
+                    <a href="https://github.com/PiotrP66/Oto-dom-web-scraper" class="btn-visit align-self-start">Github</a>
                   </div>
                 </div>
               </div>
@@ -255,8 +353,43 @@
                 <div class="language-python">
                   <!-- Kod Python -->
                   <pre>
-                  def greet():
-                    print("Hello, world!")
+                  Fragment kodu:
+                  
+                  def collect_url(driver):
+                  """Collect URLs from a web page's listings using a Selenium WebDriver.
+
+                  This function searches for all listing elements on the current page
+                  (identified by the XPath "//ul//li") and attempts to extract URLs from
+                  anchor tags that contain '/pl/oferta/' in their 'href' attribute. Each
+                  unique URL is stored in a Pandas DataFrame under the column "URL".
+                  Listings without a valid link are skipped.
+
+                  Parameters:
+                      driver (selenium.webdriver): An instance of Selenium WebDriver used
+                                                  to interact with the web page.
+
+                  Returns:
+                      pandas.DataFrame: A DataFrame containing a single column "URL" with
+                                        the unique URLs collected from the page.
+                  """
+                  df = pd.DataFrame(columns=["URL"])
+                  # Download all listings:
+                  listings = driver.find_elements(
+                      By.XPATH, "//ul//li")
+
+                  # Extract url from every listing:
+                  for listing in listings:
+                      try:
+                          url_element = listing.find_element(
+                              By.XPATH, ".//a[contains(@href, '/pl/oferta/')]")
+                          url = url_element.get_attribute("href")
+                          if url in df.URL.values:
+                              continue
+                          else:
+                              df.loc[len(df)] = [url]
+                      except NoSuchElementException:
+                          continue
+                  return df
                   </pre>
                 </div>                
               </div>
