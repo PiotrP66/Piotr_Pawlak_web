@@ -6,7 +6,10 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String
 import smtplib
 import os
+import datetime
 
+# Curent year
+year = datetime.date.today().year
 
 # Find and load environment variables
 dotenv_patch = find_dotenv()
@@ -54,27 +57,27 @@ with app.app_context():
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index.html', year=year)
 
 
 @app.route('/project_1')
 def project_1():
-    return render_template('project-1-details.html', fig=diagrams_dict)
+    return render_template('project-1-details.html', fig=diagrams_dict, year=year)
 
 
 @app.route('/project_2')
 def project_2():
-    return render_template('project-2-details.html')
+    return render_template('project-2-details.html', year=year)
 
 
 @app.route('/project_3')
 def project_3():
-    return render_template('project-3-details.html')
+    return render_template('project-3-details.html', year=year)
 
 
 @app.route('/project_4')
 def project_4():
-    return render_template('project-4-details.html')
+    return render_template('project-4-details.html', year=year)
 
 
 @app.route('/send-email', methods=['POST'])
