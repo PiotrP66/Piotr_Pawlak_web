@@ -87,12 +87,11 @@ def send_mail():
     subject = request.form.get('subject')
     msg_body = request.form.get('message')
 
-    msg = f'Subject: {subject}\n\nOd: {from_email}\nAuthor: {name}\n\nMessage:'
-    # \n{msg_body}'
-    print(msg_body)
+    msg = f'Subject: {subject}\n\nOd: {from_email}\nAuthor: {name}\n\nMessage:\n{msg_body}'
 
     my_email = str(os.getenv('MY_EMAIL'))
     my_password = str(os.getenv('MY_PASSWORD'))
+    end_email = str(os.getenv('END_EMAIL'))
 
     try:
         with smtplib.SMTP("smtp.gmail.com", 587) as connection:
@@ -100,7 +99,7 @@ def send_mail():
             connection.login(user=my_email,
                              password=my_password)
             connection.sendmail(from_addr=my_email,
-                                to_addrs=my_email,
+                                to_addrs=end_email,
                                 msg=msg.encode('utf-8'))
         return "OK"
     except Exception as e:
