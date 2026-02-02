@@ -207,7 +207,10 @@
                   from sqlalchemy import Integer, String
                   import smtplib
                   import os
+                  import datetime
 
+                  # Curent year
+                  year = datetime.date.today().year
 
                   # Find and load environment variables
                   dotenv_patch = find_dotenv()
